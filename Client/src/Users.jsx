@@ -11,7 +11,7 @@ const Users = () => {
 
   const fetchUsers = () => {
     axios
-      .get("https://crud-operation-backend-blond.vercel.app/users")
+      .get("https://amya-verboten-nonmethodically.ngrok-free.dev /users")
       .then((result) => setUsers(result.data))
       .catch((err) => console.log("Error fetching users:", err));
   };
@@ -20,7 +20,7 @@ const Users = () => {
     if (window.confirm("Are you sure you want to delete this user?")) {
       axios
         .delete(
-          `https://crud-operation-backend-blond.vercel.app/delete-user/${id}`
+          `https://amya-verboten-nonmethodically.ngrok-free.dev /delete-user/${id}`
         )
         .then(() => {
           alert(" User deleted successfully!");

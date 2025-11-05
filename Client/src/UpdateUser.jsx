@@ -12,7 +12,9 @@ function UpdateUser() {
 
   useEffect(() => {
     axios
-      .get(`https://crud-operation-backend-blond.vercel.app/getuser/${id}`)
+      .get(
+        `https://amya-verboten-nonmethodically.ngrok-free.dev /getuser/${id}`
+      )
       .then((result) => {
         setUsername(result.data.username);
         setEmail(result.data.email);
@@ -24,7 +26,7 @@ function UpdateUser() {
     e.preventDefault();
     axios
       .put(
-        `https://crud-operation-backend-blond.vercel.app/update-user/${id}`,
+        `https://amya-verboten-nonmethodically.ngrok-free.dev /update-user/${id}`,
         { username, email, age }
       )
       .then(() => {

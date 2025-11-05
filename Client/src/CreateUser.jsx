@@ -12,11 +12,14 @@ function CreateUser() {
     e.preventDefault();
 
     axios
-      .post("https://crud-operation-backend-blond.vercel.app/create-user", {
-        username,
-        email,
-        age,
-      })
+      .post(
+        "https://amya-verboten-nonmethodically.ngrok-free.dev /create-user",
+        {
+          username,
+          email,
+          age,
+        }
+      )
       .then((result) => {
         alert("User created successfully!");
         setUsername("");
