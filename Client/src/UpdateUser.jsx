@@ -12,7 +12,7 @@ function UpdateUser() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/getuser/${id}`)
+      .get(`https://crud-operation-backend-blond.vercel.app/getuser/${id}`)
       .then((result) => {
         setUsername(result.data.username);
         setEmail(result.data.email);
@@ -23,7 +23,10 @@ function UpdateUser() {
   const handleUpdate = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:3000/update-user/${id}`, { username, email, age })
+      .put(
+        `https://crud-operation-backend-blond.vercel.app/update-user/${id}`,
+        { username, email, age }
+      )
       .then(() => {
         alert(" User updated successfully!");
         navigate("/");

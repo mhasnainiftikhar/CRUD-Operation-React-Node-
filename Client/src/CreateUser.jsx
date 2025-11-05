@@ -6,19 +6,23 @@ function CreateUser() {
   const [username, setUsername] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [age, setAge] = React.useState("");
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3000/create-user", { username, email, age })
+      .post("https://crud-operation-backend-blond.vercel.app/create-user", {
+        username,
+        email,
+        age,
+      })
       .then((result) => {
         alert("User created successfully!");
         setUsername("");
         setEmail("");
         setAge("");
-        navigate("/")
+        navigate("/");
       })
       .catch((err) => {
         alert("Something went wrong! Check console for details.");
@@ -30,7 +34,6 @@ function CreateUser() {
       <div className="card shadow-sm p-4 mx-auto" style={{ maxWidth: "500px" }}>
         <h3 className="text-center mb-4">Create New User</h3>
         <form onSubmit={handleSubmit}>
-        
           <div className="mb-3">
             <label className="form-label">Full Name</label>
             <input
@@ -43,7 +46,6 @@ function CreateUser() {
             />
           </div>
 
-          
           <div className="mb-3">
             <label className="form-label">Email Address</label>
             <input
@@ -56,7 +58,6 @@ function CreateUser() {
             />
           </div>
 
-         
           <div className="mb-3">
             <label className="form-label">Age</label>
             <input

@@ -5,26 +5,26 @@ import axios from "axios";
 const Users = () => {
   const [users, setUsers] = useState([]);
 
-  
   useEffect(() => {
     fetchUsers();
   }, []);
 
   const fetchUsers = () => {
     axios
-      .get("http://localhost:3000/users")
+      .get("https://crud-operation-backend-blond.vercel.app/users")
       .then((result) => setUsers(result.data))
       .catch((err) => console.log("Error fetching users:", err));
   };
 
- 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this user?")) {
       axios
-        .delete(`http://localhost:3000/delete-user/${id}`)
+        .delete(
+          `https://crud-operation-backend-blond.vercel.app/delete-user/${id}`
+        )
         .then(() => {
           alert(" User deleted successfully!");
-          fetchUsers(); 
+          fetchUsers();
         })
         .catch((err) => console.log("Error deleting user:", err));
     }
@@ -63,7 +63,7 @@ const Users = () => {
                     Edit
                   </Link>
                   <button
-                    onClick={() => handleDelete(user._id)} 
+                    onClick={() => handleDelete(user._id)}
                     className="btn btn-sm btn-outline-danger"
                   >
                     Delete
