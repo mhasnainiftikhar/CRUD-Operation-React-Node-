@@ -11,7 +11,7 @@ const Users = () => {
 
   const fetchUsers = () => {
     axios
-      .get("https://amya-verboten-nonmethodically.ngrok-free.dev /users")
+      .get("https://amya-verboten-nonmethodically.ngrok-free.dev/users")
       .then((result) => setUsers(result.data))
       .catch((err) => console.log("Error fetching users:", err));
   };
@@ -20,7 +20,7 @@ const Users = () => {
     if (window.confirm("Are you sure you want to delete this user?")) {
       axios
         .delete(
-          `https://amya-verboten-nonmethodically.ngrok-free.dev /delete-user/${id}`
+          `https://amya-verboten-nonmethodically.ngrok-free.dev/delete-user/${id}`
         )
         .then(() => {
           alert(" User deleted successfully!");
@@ -29,7 +29,7 @@ const Users = () => {
         .catch((err) => console.log("Error deleting user:", err));
     }
   };
-
+  console.log(users);
   return (
     <div className="container mt-5">
       <h2 className="text-center mb-4">User List</h2>
@@ -50,7 +50,7 @@ const Users = () => {
         </thead>
         <tbody>
           {users.length > 0 ? (
-            users.map((user, index) => (
+            users?.map((user, index) => (
               <tr key={index}>
                 <td>{user.username}</td>
                 <td>{user.email}</td>

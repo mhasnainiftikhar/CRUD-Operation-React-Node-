@@ -13,7 +13,7 @@ function UpdateUser() {
   useEffect(() => {
     axios
       .get(
-        `https://amya-verboten-nonmethodically.ngrok-free.dev /getuser/${id}`
+        `https://amya-verboten-nonmethodically.ngrok-free.dev/getuser/${id}`
       )
       .then((result) => {
         setUsername(result.data.username);
@@ -26,7 +26,7 @@ function UpdateUser() {
     e.preventDefault();
     axios
       .put(
-        `https://amya-verboten-nonmethodically.ngrok-free.dev /update-user/${id}`,
+        `https://amya-verboten-nonmethodically.ngrok-free.dev/update-user/${id}`,
         { username, email, age }
       )
       .then(() => {

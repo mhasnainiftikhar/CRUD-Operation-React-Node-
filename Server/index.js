@@ -14,6 +14,7 @@ app.use(
     origin: [
       "https://crud-operation-frontend-amber.vercel.app", // your frontend
       "http://localhost:5173", // local dev (optional)
+      "https://amya-verboten-nonmethodically.ngrok-free.dev"
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
@@ -105,6 +106,10 @@ app.delete("/delete-user/:id", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+const PORT = process.env.PORT
+app.listen(PORT, () => {
+  console.log(`Localhost runnin on http://localhost:${PORT}`)
+})
 
 // ✅ Export for Vercel
 export default app;

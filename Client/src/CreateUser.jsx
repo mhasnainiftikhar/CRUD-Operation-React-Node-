@@ -13,7 +13,7 @@ function CreateUser() {
 
     axios
       .post(
-        "https://amya-verboten-nonmethodically.ngrok-free.dev /create-user",
+        "https://amya-verboten-nonmethodically.ngrok-free.dev/create-user",
         {
           username,
           email,
